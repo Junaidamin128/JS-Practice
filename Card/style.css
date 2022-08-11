@@ -1,0 +1,26 @@
+.card .head{
+    background-color: black;
+    color: white;
+    z-index: 1;
+}
+.card{
+    padding: 0 !important;
+    position: relative;
+}
+.card:hover {
+    transform: translateY(-20px);
+}
+.card .tag{
+    width: 100%;
+    position: absolute;
+    background-color: orange;
+    transform: translateY(105px);
+}
+.card:hover .tag{
+    z-index: 1;
+}
+.card .detail p{
+    line-height: 1;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    margin: 5px 0 0 0 !important;
+}

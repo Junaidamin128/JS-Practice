@@ -1,0 +1,41 @@
+body{
+    background: url(./img/marek-piwnicki-rZMiCdPAlss-unsplash.jpg) no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+}
+.container{
+    margin: auto;
+    width: 800px;
+    height: 300px;
+    padding: 25px;
+    text-align: justify;
+    margin-top: 100px;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(4px);
+}
+.tabs{
+    position: relative;
+}
+.tabcontent{
+
+    position: absolute;
+    display: none;
+}
+
+.tablink button{
+    text-align: left;
+    width: 10rem;
+    height: 5rem;
+    font-size: 2rem;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+.tablink button:hover{
+    color: rgba(27, 27, 27);
+    background-color: rgba(0,0,0,0.2);
+}
+.tablink button.active{
+    background-color: rgba(0,0,0,0.2);
+}

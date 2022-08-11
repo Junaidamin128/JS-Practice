@@ -1,0 +1,13 @@
+.btn-folder{
+    border-radius: 10px;
+}
+.btn-note{
+    border-radius: 10px;
+}
+#note-form form{
+    border: 2px solid red;
+    /* width: 100%; */
+}
+#note-form form input{
+    width: 100%;
+}

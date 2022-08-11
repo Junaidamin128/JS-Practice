@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    />
+
+    <style>
+      .main {
+        position: relative;
+      }
+      .body {
+        position: absolute;
+        opacity: 0;
+      }
+      .show {
+        display: block;
+        opacity: 1;
+      }
+    </style>
+    <title>Accordion</title>
+  </head>
+  <body>
+    <div class="container m-auto">
+      <div class="main first bg-gray-300 border-4 rounded">
+        <div class="head text-4xl p-2 bg-gray-500 rounded flex justify-between">
+          <h1>First Item</h1>
+          <button class="btn" id="btn1">+</button>
+        </div>
+        <div class="body" id="body1">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+            nulla illum amet dolore magni aspernatur, debitis saepe ullam. Neque
+            qui, ipsam aspernatur ex corporis incidunt est numquam asperiores
+            ducimus provident, dignissimos libero unde mollitia animi aliquid
+            repellat non vitae illo pariatur cupiditate dolor. Est,
+            reprehenderit veniam? Pariatur aperiam expedita est.
+          </p>
+        </div>
+      </div>
+      <div class="main second bg-gray-300 border-4 rounded">
+        <div class="head text-4xl p-2 bg-gray-500 rounded flex justify-between">
+          <h1>Second Item</h1>
+          <button class="btn" id="btn2">+</button>
+        </div>
+        <div class="body" id="body2">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+            nulla illum amet dolore magni aspernatur, debitis saepe ullam. Neque
+            qui, ipsam aspernatur ex corporis incidunt est numquam asperiores
+            ducimus provident, dignissimos libero unde mollitia animi aliquid
+            repellat non vitae illo pariatur cupiditate dolor. Est,
+            reprehenderit veniam? Pariatur aperiam expedita est.
+          </p>
+        </div>
+      </div>
+      <div class="main third bg-gray-300 border-4 rounded">
+        <div class="head text-4xl p-2 bg-gray-500 rounded flex justify-between">
+          <h1>Third Item</h1>
+          <button class="btn" id="btn3">+</button>
+        </div>
+        <div class="body" id="body3">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+            nulla illum amet dolore magni aspernatur, debitis saepe ullam. Neque
+            qui, ipsam aspernatur ex corporis incidunt est numquam asperiores
+            ducimus provident, dignissimos libero unde mollitia animi aliquid
+            repellat non vitae illo pariatur cupiditate dolor. Est,
+            reprehenderit veniam? Pariatur aperiam expedita est.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let btn1 = document.getElementById("btn1");
+      let btn2 = document.getElementById("btn2");
+      let btn3 = document.getElementById("btn3");
+      let body1 = document.getElementById("body1");
+      let body2 = document.getElementById("body2");
+      let body3 = document.getElementById("body3");
+
+      btn1.addEventListener("click", () => {
+        if (btn1.innerHTML == "+") {
+          btn1.innerHTML = "-";
+          if (btn2.innerHTML == "-" || btn3.innerHTML == "-") {
+            body2.classList.remove("show");
+            body2.classList.add("body");
+            body3.classList.remove("show");
+            body3.classList.add("body");
+            btn2.innerHTML = "+";
+            btn3.innerHTML = "+";
+          }
+          body1.classList.add("show");
+          body1.classList.remove("body");
+        } else {
+          btn1.innerHTML = "+";
+          body1.classList.add("body");
+          body1.classList.remove("show");
+        }
+      });
+      btn2.addEventListener("click", () => {
+        if (btn2.innerHTML == "+") {
+          btn2.innerHTML = "-";
+          if (btn1.innerHTML == "-" || btn3.innerHTML == "-") {
+            body1.classList.remove("show");
+            body1.classList.add("body");
+            body3.classList.remove("show");
+            body3.classList.add("body");
+            btn1.innerHTML = "+";
+            btn3.innerHTML = "+";
+          }
+          body2.classList.remove("body");
+          body2.classList.add("show");
+        } else {
+          body2.classList.add("body");
+          body2.classList.remove("show");
+          btn2.innerHTML = "+";
+        }
+      });
+      btn3.addEventListener("click", () => {
+        if (btn3.innerHTML == "+") {
+          btn3.innerHTML = "-";
+          if (btn2.innerHTML == "-" || btn1.innerHTML == "-") {
+            body2.classList.remove("show");
+            body2.classList.add("body");
+            body1.classList.remove("show");
+            body1.classList.add("body");
+            btn2.innerHTML = "+";
+            btn1.innerHTML = "+";
+          }
+          body3.classList.remove("body");
+          body3.classList.add("show");
+        } else {
+          body3.classList.add("body");
+          body3.classList.remove("show");
+          btn3.innerHTML = "+";
+        }
+      });
+    </script>
+    <script>
+        let btn = document.querySelector(".btn");
+        console.log(btn)
+    </script>
+  </body>
+</html>
